@@ -7,9 +7,9 @@
 #include <stdio.h>
 
 int main() {
-  jgnsdgnsg
-  mfkldgsgsg
-  hvhjvhvhv
+  int a;
+  scanf("%d", &a);
+  printf("%d", a);
 
     
     
@@ -22,5 +22,5 @@ int main() {
     
     
     
-  return 0;
+
 }
