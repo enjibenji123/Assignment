@@ -126,5 +126,5 @@ int main()
    printf("\ncypher rotation value = %d\n", k);
   }
     
-  
+  //task 3
 }
