@@ -140,10 +140,10 @@ int main()
     FILE *myFile = fopen("task3", "r");
 
     char charArray[26];
-    char messageArray[26];
+    char messageArray[50];
     int i;
     fseek( myFile, 30, SEEK_SET );
-    for (i = 0; i < 26; i++)
+    for (i = 0; i < 50; i++)
      {
       fscanf(myFile, "%c" , &messageArray[i]);
      } 
@@ -155,9 +155,12 @@ int main()
      } 
      
     for (i = 0; i < 50; i++)
-    {
+    {  
       int c = (messageArray[i]-'a');
-      printf("%d", c);
+      if ((-32 < c) && ( c < -6 ))
+      {
+          c = c + 32;
+      }
       if (c > 0)
       {
          messageArray[i] = charArray[c]; 
@@ -183,10 +186,10 @@ int main()
     FILE *myFile = fopen("task4", "r");
 
     char charArray[26];
-    char messageArray[26];
+    char messageArray[50];
     int i;
     fseek( myFile, 30, SEEK_SET );
-    for (i = 0; i < 26; i++)
+    for (i = 0; i < 50; i++)
      {
       fscanf(myFile, "%c" , &messageArray[i]);
      } 
@@ -200,6 +203,11 @@ int main()
     for (i = 0; i < 50; i++)
     {
       int c = (messageArray[i]-'a');
+      if ((-32 < c) && ( c < -6 ))
+      {
+          c = c + 32;
+          messageArray[i] = c + 'a';
+      }
       if (c > 0)
       {
         //printf("%d", c);
@@ -211,6 +219,7 @@ int main()
          if (messageArray[i] == charArray[l])  
          {
              index = l;
+             l = 26;
          }  
          l++;
         }
