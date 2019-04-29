@@ -53,7 +53,7 @@ int main()
    fseek( myFile1, 6, SEEK_SET );
    while ( ( letter = fgetc(myFile1)) != EOF)         //Gets each character from file unt reaching end of file
     {
-     if (letter >= 'a' && letter <= 'z')             //Checks for upper case letters
+     if (letter >= 'a' && letter <= 'z')             //Checks for lower case letters
        {
         num = letter - 'a';   
         num = (num + k)%(26);                         //Converts lower case letters to upper case equivilent & also rotates number through alphabet by amount k
@@ -217,7 +217,7 @@ int main()
     for (i = 0; i < 50; i++)                              //cycles through characters in message
     {
       int c = (messageArray[i]-'A');                        //Set c equal to number of letter in alphabet i.e a=0
-      if ((32 < c) && ( c < 64 ))                           //Checks for lower case letters 
+      if ((32 < c) && ( c < 58 ))                           //Checks for lower case letters 
       {
           c = c - 32;                                        //Converts lower case letters to upper case equivilent
           messageArray[i] = c + 'A';
