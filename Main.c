@@ -153,31 +153,31 @@ int main()
   
     FILE *myFile = fopen("task3", "r");               //Opens and reads my file 
 
-    char charArray[26];
-    char messageArray[50];
+    char charArray[26];                             //Creates an array of char and of size 26 for key
+    char messageArray[50];                          //Creates an array of char and of size 50 for message
     int i;
-    fseek( myFile, 30, SEEK_SET );
+    fseek( myFile, 30, SEEK_SET );                 //Set cursor position in file ready to read message
     for (i = 0; i < 50; i++)
      {
-      fscanf(myFile, "%c" , &messageArray[i]);
+      fscanf(myFile, "%c" , &messageArray[i]);        //Scans and reads message to be encrypted
      } 
 
-    fseek( myFile, 4, SEEK_SET );
+    fseek( myFile, 4, SEEK_SET );                     //Set cursor position in file ready to read key
     for (i = 0; i < 26; i++)
      {
-      fscanf(myFile, "%c" , &charArray[i]);
+      fscanf(myFile, "%c" , &charArray[i]);           //Scans and reads key
      } 
      
-    for (i = 0; i < 50; i++)
+    for (i = 0; i < 50; i++)                          //cycles through characters in message
     {  
-      int c = (messageArray[i]-'a');
+      int c = (messageArray[i]-'a');                   //Set c equal to number of letter in alphabet i.e a=0
       if ((-32 < c) && ( c < -6 ))                     //Checks for upper case letters 
       {
           c = c + 32;                                  //Converts upper case letters to lower case equivilent
       }
-      if (c > 0)
+      if (c > 0)                                     //Makes sure only characters over 0 are transfered
       {
-         messageArray[i] = charArray[c]; 
+         messageArray[i] = charArray[c];                //Sets character to substitution character i,e a = charArray[c]
       }
      
      
@@ -199,45 +199,44 @@ int main()
   
     FILE *myFile = fopen("task4", "r");                          //Opens and reads my file 
 
-    char charArray[26];
-    char messageArray[50];
+    char charArray[26];                                     //Creates an array of char and of size 26 for key
+    char messageArray[50];                                 //Creates an array of char and of size 50 for message
     int i;
-    fseek( myFile, 30, SEEK_SET );
+    fseek( myFile, 30, SEEK_SET );                         //Set cursor position in file ready to read message
     for (i = 0; i < 50; i++)
      {
-      fscanf(myFile, "%c" , &messageArray[i]);
+      fscanf(myFile, "%c" , &messageArray[i]);             //Scans and reads message to be decrypted
      } 
 
-    fseek( myFile, 4, SEEK_SET );
+    fseek( myFile, 4, SEEK_SET );                         //Set cursor position in file ready to read key
     for (i = 0; i < 26; i++)
      {
-      fscanf(myFile, "%c" , &charArray[i]);
+      fscanf(myFile, "%c" , &charArray[i]);               //Scans and reads key
      } 
 
-    for (i = 0; i < 50; i++)
+    for (i = 0; i < 50; i++)                              //cycles through characters in message
     {
-      int c = (messageArray[i]-'a');
+      int c = (messageArray[i]-'a');                        //Set c equal to number of letter in alphabet i.e a=0
       if ((-32 < c) && ( c < -6 ))                           //Checks for upper case letters 
       {
           c = c + 32;                                        //Converts upper case letters to lower case equivilent
           messageArray[i] = c + 'a';
       }
-      if (c > 0)
+      if (c > 0)                                           //Makes sure only characters over 0 are transfered
       {
-        //printf("%d", c);
         int index = 0;  
         int l = 0;  
-        while (  l < 26 )  
+        while (  l < 26 )                                 //Cycles through characters in key
         {
 
-         if (messageArray[i] == charArray[l])  
+         if (messageArray[i] == charArray[l])                 //Looks for Character in key
          {
-             index = l;
-             l = 26;
+             index = l;                                      //Index is set to value of chacter in key
+             l = 26;                                        // Character found so loop can end
          }  
          l++;
         }
-        messageArray[i] = index + 'a';
+        messageArray[i] = index + 'a';                   //Decrypts text
       }      
     }
   
