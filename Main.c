@@ -1,15 +1,26 @@
 
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+
+//Ben Harris, c3318216.
+//Assignment 1
+//Below is a block of code which should be able to encrypt and decrypt text using both a rotation cypher and a substitution cypher.
+//To select which function to use you must run a certain task.
+//Task 1 : Cypher encryption of a message with a key : This task takes a message and a rotation value and encrypts your original message by cycling the letters in the alphabet. The task then returns the encrypted message.
+//Task 2 : Cypher decryption of a message with a key : This task takes an encrypted message and a rotation value and decrpts the message by cycling back the letters in the alphabet. The task the returns the decrypted message.
+//Task 3 : Substitution encryption of a message with a key : This task takes a message and encrypts it with a substituted alphabet. The task then returns the encrypted message.
+//Task 4 : Substitution decryption of a message with a key : This task takes an encrytped message and decrypts it using the substituted alphabet key. The task then returns the decrypted message.
+//Task 5 : Cypher decyption of a message without a key : This task takes an encrypted message with no key. The task the returns the decrypted message 25 more times with one answer being the decrypted message.
+//Task 6 : Did not have enough time to complete.. My fault..
 int main() 
 {
- int x;  
- scanf("%d\n", &x);
-  
+ int x;                 
+ scanf("%d\n", &x);     //scan file for number of file and assign to x to help choose which task to use.
+ 
+ 
+ //Task 1 : Cypher encryption of a message with a key : This task takes a message and a rotation value and encrypts your original message by cycling the letters in the alphabet. The task then returns the encrypted message.
  if (x == 1)
   {
    int k;
@@ -68,6 +79,8 @@ int main()
  
  
  
+ 
+//Task 2 : Cypher decryption of a message with a key : This task takes an encrypted message and a rotation value and decrpts the message by cycling back the letters in the alphabet. The task the returns the decrypted message. 
  if (x == 2)
   {
    int k;
@@ -134,6 +147,7 @@ int main()
     
 
 
+//Task 3 : Substitution encryption of a message with a key : This task takes a message and encrypts it with a substituted alphabet. The task then returns the encrypted message.
   if (x == 3)
    {
   
@@ -179,7 +193,7 @@ int main()
    
    
    
-   
+  //Task 4 : Substitution decryption of a message with a key : This task takes an encrytped message and decrypts it using the substituted alphabet key. The task then returns the decrypted message. 
    if (x == 4)
    {
   
@@ -232,7 +246,7 @@ int main()
   
   
   
-  
+ //Task 5 : Cypher decyption of a message without a key : This task takes an encrypted message with no key. The task the returns the decrypted message 25 more times with one answer being the decrypted message. 
   if (x == 5)
   {
    char letter, asciichar;
