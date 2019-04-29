@@ -31,45 +31,45 @@ int main()
     }   
    char letter, asciichar;
    int num;
-   FILE *myFile = fopen("task1", "r");
+   FILE *myFile = fopen("task1", "r");           //Opens and reads my file 
    fseek( myFile, 6, SEEK_SET );
-   while ( ( letter = fgetc(myFile)) != EOF)
+   while ( ( letter = fgetc(myFile)) != EOF)     //Gets each character from file unt reaching end of file
     {     
-     if (letter >= 'A' && letter <= 'Z')
+     if (letter >= 'A' && letter <= 'Z')         //Checks for upper case letters 
       {
-       num = letter - 'A' + 'a';
+       num = letter - 'A' + 'a';                 //Converts upper case letters to lower case equivilent
       } 
      else
       {
        num = letter;   
       }
  
-     asciichar = num + 0;
+     asciichar = num + 0;                        //Converts num to character, ready for printing
      printf("%c", asciichar);
     } 
   
    printf("  - This is the original message.\n");
-   FILE *myFile1 = fopen("task1", "r");
+   FILE *myFile1 = fopen("task1", "r");             //Opens and reads my file 
    fseek( myFile1, 6, SEEK_SET );
-   while ( ( letter = fgetc(myFile1)) != EOF)
+   while ( ( letter = fgetc(myFile1)) != EOF)         //Gets each character from file unt reaching end of file
     {
-     if (letter >= 'A' && letter <= 'Z')
+     if (letter >= 'A' && letter <= 'Z')             //Checks for upper case letters
        {
         num = letter - 'A';   
-        num = (num + k)%(26);
+        num = (num + k)%(26);                         //Converts upper case letters to lower case equivilent & also rotates number through alphabet by amount k
         num = num + 'a';
        }  
      else if (letter >= 'a' && letter <= 'z')
        {
         num = letter - 'a'; 
-        num = (num + k)%(26);
+        num = (num + k)%(26);                        //rotates number through alphabet by amount k
         num = num + 'a';
        }
      else
        {
         num = letter;  
        }
-      asciichar = num + 0; 
+      asciichar = num + 0;                        //Converts num to character, ready for printing
       printf("%c",asciichar);
     }
    
@@ -91,32 +91,32 @@ int main()
     }   
    char letter, asciichar;
    int num;
-   FILE *myFile = fopen("task2", "r");
+   FILE *myFile = fopen("task2", "r");                   //Opens and reads my file 
    fseek( myFile, 6, SEEK_SET );
-   while ( ( letter = fgetc(myFile)) != EOF)
+   while ( ( letter = fgetc(myFile)) != EOF)             //Gets each character from file unt reaching end of file
     {     
-     if (letter >= 'A' && letter <= 'Z')
+     if (letter >= 'A' && letter <= 'Z')                 //Checks for upper case letters
       {
-       num = letter - 'A' + 'a';
+       num = letter - 'A' + 'a';                         //Converts upper case letters to lower case equivilent
       } 
      else
       {
        num = letter;   
       }
  
-     asciichar = num + 0;
+     asciichar = num + 0;                                   //Converts num to character, ready for printing
      printf("%c", asciichar);
     } 
   
    printf("  - This is the original message.\n");
-   FILE *myFile1 = fopen("task2", "r");
+   FILE *myFile1 = fopen("task2", "r");                    //Opens and reads my file 
    fseek( myFile1, 6, SEEK_SET );
-   while ( ( letter = fgetc(myFile1)) != EOF)
+   while ( ( letter = fgetc(myFile1)) != EOF)              //Gets each character from file unt reaching end of file
     {
-     if (letter >= 'A' && letter <= 'Z')
+     if (letter >= 'A' && letter <= 'Z')                  //Checks for upper case letters
        {
         num = letter - 'A';  
-        num = (num - k)%(26);
+        num = (num - k)%(26);                            //Converts upper case letters to lower case equivilent & also rotates number backward through alphabet by amount k
         if (num < 0)
          {
           num = 26 + num;
@@ -126,7 +126,7 @@ int main()
      else if (letter >= 'a' && letter <= 'z')
        {
         num = letter - 'a';
-        num = (num - k)%(26);
+        num = (num - k)%(26);                               //rotates number backward through alphabet by amount k
         if (num < 0)
          {
           num = 26 + num;
@@ -137,7 +137,7 @@ int main()
        {
         num = letter;  
        }
-      asciichar = num + 0; 
+      asciichar = num + 0;                                   //Converts num to character, ready for printing
       printf("%c",asciichar);
     }
    
@@ -151,7 +151,7 @@ int main()
   if (x == 3)
    {
   
-    FILE *myFile = fopen("task3", "r");
+    FILE *myFile = fopen("task3", "r");               //Opens and reads my file 
 
     char charArray[26];
     char messageArray[50];
@@ -171,9 +171,9 @@ int main()
     for (i = 0; i < 50; i++)
     {  
       int c = (messageArray[i]-'a');
-      if ((-32 < c) && ( c < -6 ))
+      if ((-32 < c) && ( c < -6 ))                     //Checks for upper case letters 
       {
-          c = c + 32;
+          c = c + 32;                                  //Converts upper case letters to lower case equivilent
       }
       if (c > 0)
       {
@@ -197,7 +197,7 @@ int main()
    if (x == 4)
    {
   
-    FILE *myFile = fopen("task4", "r");
+    FILE *myFile = fopen("task4", "r");                          //Opens and reads my file 
 
     char charArray[26];
     char messageArray[50];
@@ -217,9 +217,9 @@ int main()
     for (i = 0; i < 50; i++)
     {
       int c = (messageArray[i]-'a');
-      if ((-32 < c) && ( c < -6 ))
+      if ((-32 < c) && ( c < -6 ))                           //Checks for upper case letters 
       {
-          c = c + 32;
+          c = c + 32;                                        //Converts upper case letters to lower case equivilent
           messageArray[i] = c + 'a';
       }
       if (c > 0)
@@ -251,33 +251,33 @@ int main()
   {
    char letter, asciichar;
    int num;
-   FILE *myFile = fopen("task5", "r");
-   while ( ( letter = fgetc(myFile)) != EOF)
+   FILE *myFile = fopen("task5", "r");                           //Opens and reads my file 
+   while ( ( letter = fgetc(myFile)) != EOF)                    //Gets each character from file unt reaching end of file
     {     
-     if (letter >= 'A' && letter <= 'Z')
+     if (letter >= 'A' && letter <= 'Z')                       //Checks for upper case letters
       {
-       num = letter - 'A' + 'a';
+       num = letter - 'A' + 'a';                             //Converts upper case letters to lower case equivilent
       } 
      else
       {
        num = letter;   
       }
  
-     asciichar = num + 0;
+     asciichar = num + 0;                                      //Converts num to character, ready for printing
      printf("%c", asciichar);
     } 
   
    printf("  - This is the encrypted message.\n");
    int k;
-   for(k=1; k<26; k++)
+   for(k=1; k<26; k++)                                        //cycles through 25 different rotations to find the decrypted message
    {
-    FILE *myFile1 = fopen("task5", "r");
-    while ( ( letter = fgetc(myFile1)) != EOF)
+    FILE *myFile1 = fopen("task5", "r");                       //Opens and reads my file 
+    while ( ( letter = fgetc(myFile1)) != EOF)                 //Gets each character from file unt reaching end of file
      {
-      if (letter >= 'A' && letter <= 'Z')
+      if (letter >= 'A' && letter <= 'Z')                     //Checks for upper case letters
         {
          num = letter - 'A';   
-         num = (num + k)%(26);
+         num = (num + k)%(26);                               //Converts upper case letters to lower case equivilent
          num = num + 'a';
         }  
       else if (letter >= 'a' && letter <= 'z')
@@ -290,7 +290,7 @@ int main()
         { 
          num = letter;  
         }
-       asciichar = num + 0; 
+       asciichar = num + 0;                                //Converts num to character, ready for printing
        printf("%c",asciichar);
      }
      printf("  - This could be the message.\n"); 
