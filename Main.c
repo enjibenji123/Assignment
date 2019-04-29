@@ -1,54 +1,43 @@
 
 
 
-
-
-
 #include <stdio.h>
 
 int main() 
 {
-  int x;
-  char c;
+  int x;  
   scanf("%d\n", &x);
   if (x == 1)
   {
-  FILE *text = fopen("task1", "r"); 
-  while ( ( c = fgetc(text)) != EOF)
-    {
-    int xc = c;
-    printf("\n%d", xc);    
-    if ( 65 <= xc <= 90 )
-     {
-      xc = (xc + 32);   
-     }
-    char i = xc;
-    printf("%c", i);
+   char letter, asciinum;
+   int num;
+   FILE *text = fopen("task1", "r"); 
+   while ( ( letter = fgetc(text)) != EOF)
+    {     
+     if (letter >= 'A' && letter <= 'Z')
+      {
+       num = letter - 'A' + 'a';
+      } 
+     else
+      {
+       num = letter;   
+      }
+ 
+     asciinum = num + 0;
+     printf("%c", asciinum);
     }
 
 
 
-
-
-
-
-  }
     printf("\ncypher rotation value = %d\n", x);
+   }
+   
     
   
       
   
   
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
