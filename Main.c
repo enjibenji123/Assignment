@@ -35,9 +35,9 @@ int main()
    fseek( myFile, 6, SEEK_SET );
    while ( ( letter = fgetc(myFile)) != EOF)     //Gets each character from file unt reaching end of file
     {     
-     if (letter >= 'A' && letter <= 'Z')         //Checks for upper case letters 
+     if (letter >= 'a' && letter <= 'z')         //Checks for lower case letters 
       {
-       num = letter - 'A' + 'a';                 //Converts upper case letters to lower case equivilent
+       num = letter - 'a' + 'A';                 //Converts lower case letters to upper case equivilent
       } 
      else
       {
@@ -53,17 +53,17 @@ int main()
    fseek( myFile1, 6, SEEK_SET );
    while ( ( letter = fgetc(myFile1)) != EOF)         //Gets each character from file unt reaching end of file
     {
-     if (letter >= 'A' && letter <= 'Z')             //Checks for upper case letters
+     if (letter >= 'a' && letter <= 'z')             //Checks for upper case letters
        {
-        num = letter - 'A';   
-        num = (num + k)%(26);                         //Converts upper case letters to lower case equivilent & also rotates number through alphabet by amount k
-        num = num + 'a';
+        num = letter - 'a';   
+        num = (num + k)%(26);                         //Converts lower case letters to upper case equivilent & also rotates number through alphabet by amount k
+        num = num + 'A';
        }  
-     else if (letter >= 'a' && letter <= 'z')
+     else if (letter >= 'A' && letter <= 'Z')
        {
-        num = letter - 'a'; 
+        num = letter - 'A'; 
         num = (num + k)%(26);                        //rotates number through alphabet by amount k
-        num = num + 'a';
+        num = num + 'A';
        }
      else
        {
@@ -95,9 +95,9 @@ int main()
    fseek( myFile, 6, SEEK_SET );
    while ( ( letter = fgetc(myFile)) != EOF)             //Gets each character from file unt reaching end of file
     {     
-     if (letter >= 'A' && letter <= 'Z')                 //Checks for upper case letters
+     if (letter >= 'a' && letter <= 'z')                 //Checks for lower case letters
       {
-       num = letter - 'A' + 'a';                         //Converts upper case letters to lower case equivilent
+       num = letter - 'a' + 'A';                         //Converts lower case letters to upper case equivilent
       } 
      else
       {
@@ -113,25 +113,25 @@ int main()
    fseek( myFile1, 6, SEEK_SET );
    while ( ( letter = fgetc(myFile1)) != EOF)              //Gets each character from file unt reaching end of file
     {
-     if (letter >= 'A' && letter <= 'Z')                  //Checks for upper case letters
+     if (letter >= 'a' && letter <= 'z')                  //Checks for upper case letters
        {
-        num = letter - 'A';  
-        num = (num - k)%(26);                            //Converts upper case letters to lower case equivilent & also rotates number backward through alphabet by amount k
+        num = letter - 'a';  
+        num = (num - k)%(26);                            //Converts lower case letters to upper case equivilent & also rotates number backward through alphabet by amount k
         if (num < 0)
          {
           num = 26 + num;
          } 
-        num = num + 'a';
+        num = num + 'A';
        }  
-     else if (letter >= 'a' && letter <= 'z')
+     else if (letter >= 'A' && letter <= 'Z')
        {
-        num = letter - 'a';
+        num = letter - 'A';
         num = (num - k)%(26);                               //rotates number backward through alphabet by amount k
         if (num < 0)
          {
           num = 26 + num;
          } 
-        num = num + 'a';
+        num = num + 'A';
        }
      else
        {
@@ -170,10 +170,10 @@ int main()
      
     for (i = 0; i < 50; i++)                          //cycles through characters in message
     {  
-      int c = (messageArray[i]-'a');                   //Set c equal to number of letter in alphabet i.e a=0
-      if ((-32 < c) && ( c < -6 ))                     //Checks for upper case letters 
+      int c = (messageArray[i]-'A');                   //Set c equal to number of letter in alphabet i.e a=0
+      if ((32 < c) && ( c < 64 ))                     //Checks for lower case letters 
       {
-          c = c + 32;                                  //Converts upper case letters to lower case equivilent
+          c = c - 32;                                  //Converts lower case letters to upper case equivilent
       }
       if (c > 0)                                     //Makes sure only characters over 0 are transfered
       {
@@ -216,11 +216,11 @@ int main()
 
     for (i = 0; i < 50; i++)                              //cycles through characters in message
     {
-      int c = (messageArray[i]-'a');                        //Set c equal to number of letter in alphabet i.e a=0
-      if ((-32 < c) && ( c < -6 ))                           //Checks for upper case letters 
+      int c = (messageArray[i]-'A');                        //Set c equal to number of letter in alphabet i.e a=0
+      if ((32 < c) && ( c < 64 ))                           //Checks for lower case letters 
       {
-          c = c + 32;                                        //Converts upper case letters to lower case equivilent
-          messageArray[i] = c + 'a';
+          c = c - 32;                                        //Converts lower case letters to upper case equivilent
+          messageArray[i] = c + 'A';
       }
       if (c > 0)                                           //Makes sure only characters over 0 are transfered
       {
@@ -236,7 +236,7 @@ int main()
          }  
          l++;
         }
-        messageArray[i] = index + 'a';                   //Decrypts text
+        messageArray[i] = index + 'A';                   //Decrypts text
       }      
     }
   
@@ -253,9 +253,9 @@ int main()
    FILE *myFile = fopen("task5", "r");                           //Opens and reads my file 
    while ( ( letter = fgetc(myFile)) != EOF)                    //Gets each character from file unt reaching end of file
     {     
-     if (letter >= 'A' && letter <= 'Z')                       //Checks for upper case letters
+     if (letter >= 'a' && letter <= 'z')                       //Checks for lower case letters
       {
-       num = letter - 'A' + 'a';                             //Converts upper case letters to lower case equivilent
+       num = letter - 'a' + 'A';                             //Converts lower case letters to upper case equivilent
       } 
      else
       {
@@ -273,17 +273,17 @@ int main()
     FILE *myFile1 = fopen("task5", "r");                       //Opens and reads my file 
     while ( ( letter = fgetc(myFile1)) != EOF)                 //Gets each character from file unt reaching end of file
      {
-      if (letter >= 'A' && letter <= 'Z')                     //Checks for upper case letters
+      if (letter >= 'a' && letter <= 'z')                     //Checks for lower case letters
         {
-         num = letter - 'A';   
-         num = (num + k)%(26);                               //Converts upper case letters to lower case equivilent
-         num = num + 'a';
+         num = letter - 'a';   
+         num = (num + k)%(26);                               //Converts lower case letters to upper case equivilent
+         num = num + 'A';
         }  
-      else if (letter >= 'a' && letter <= 'z')
+      else if (letter >= 'A' && letter <= 'Z')
         {
-         num = letter - 'a'; 
+         num = letter - 'A'; 
          num = (num + k)%(26);
-         num = num + 'a';
+         num = num + 'A';
         }
       else
         { 
