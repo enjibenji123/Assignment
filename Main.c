@@ -13,7 +13,7 @@
 //Task 3 : Substitution encryption of a message with a key : This task takes a message and encrypts it with a substituted alphabet. The task then returns the encrypted message.
 //Task 4 : Substitution decryption of a message with a key : This task takes an encrytped message and decrypts it using the substituted alphabet key. The task then returns the decrypted message.
 //Task 5 : Cypher decyption of a message without a key : This task takes an encrypted message with no key. The task the returns the decrypted message 25 more times with one answer being the decrypted message.
-//Task 6 : Did not have enough time to complete.. My fault..
+
 int main() 
 {
  int x;                 
